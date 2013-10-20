@@ -12,3 +12,14 @@ void Dummy::pop_modified(std::string & out) {
 }
 
 
+void Dummy2::pop_modified(std::string & out) {
+  out.append(" Yours sincerely");
+}
+
+
+Wrapper::~Wrapper() {
+  if (p!=NULL) delete p;
+  p = NULL;
+}
+
+
