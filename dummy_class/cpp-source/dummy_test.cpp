@@ -4,35 +4,30 @@
 
 
 int main() {
-  Dummy d;
-  d.store("Hi, How are you?");
+  A a;
+  std::string out1;
+  a.pop_modified(out1);
+  assert("A" == out1);
 
-  std::string out;
-  d.pop_modified(out);
-  assert("Was said Hi, How are you?" == out);
-
-  Dummy2 d2;
-  std::string out2("Hi");
-  d2.pop_modified(out2);
-  assert("Hi Yours sincerely" == out2);
+  B b;
+  std::string out2;
+  b.pop_modified(out2);
+  assert("B" == out2);
 
   Wrapper w;
-  w.p = new Dummy2();
-  std::string out3("Caio");
+  w.p = new A();
+  std::string out3;
   w.pop_string(out3);
-  assert("Caio Yours sincerely" == out3);
+  assert("A" == out3);
 
   delete w.p;
-  Dummy *d3 = new Dummy();
-  d3->store("Bye");
-  w.p = d3;
+  w.p = new B();
   std::string out4;
   w.pop_string(out4);
-  std::cout << out << std::endl << out2 << std::endl;
-  std::cout << out3 << std::endl << out4 << std::endl;
-  assert("Was said Bye" == out4);
+  assert("B" == out4);
 
-  std::cout << out << std::endl << out2 << std::endl;
+
+  std::cout << out1 << std::endl << out2 << std::endl;
   std::cout << out3 << std::endl << out4 << std::endl;
 
   return 0;

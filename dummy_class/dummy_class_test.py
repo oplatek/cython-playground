@@ -4,8 +4,11 @@
 import dummy_class
 
 if __name__ == '__main__':
-    d = dummy_class.Dummy()
-    d.store("Jak se vede?")
-    t = d.pop_modified()
-    print t
-    assert("Was said Jak se vede?" == t)
+    a = dummy_class.A()
+    assert(a.pop_modified() == 'A')  # works
+    b = dummy_class.B()
+    assert(b.pop_modified() == 'B')  # works
+
+    w = dummy_class.Wrapper()
+    w.setDummy(a)  # TODO segfaults
+    assert(w.pop_string() == 'A')

@@ -8,21 +8,17 @@ class PopInterface {
     virtual ~PopInterface() {}
 };
 
-class Dummy: public PopInterface {
+class A: public PopInterface {
   public:
-    void store(const std::string & in);
     virtual void pop_modified(std::string & out);
-    virtual ~Dummy() {};
-
-  private:
-    std::string buff_;
+    virtual ~A() {};
 };
 
 
-class Dummy2: public PopInterface {
+class B: public PopInterface {
   public:
     virtual void pop_modified(std::string & out);
-    virtual ~Dummy2() {};
+    virtual ~B() {};
 };
 
 

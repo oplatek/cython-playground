@@ -1,19 +1,15 @@
 #include "dummy.h"
 
 
-void Dummy::store(const std::string & out) {
-  buff_.append(out);
-}
-
-void Dummy::pop_modified(std::string & out) {
-  out.append("Was said ");
-  out.append(buff_);
-  buff_.clear();
+void A::pop_modified(std::string & out) {
+  out.clear();
+  out.append("A");
 }
 
 
-void Dummy2::pop_modified(std::string & out) {
-  out.append(" Yours sincerely");
+void B::pop_modified(std::string & out) {
+  out.clear();
+  out.append("B");
 }
 
 
