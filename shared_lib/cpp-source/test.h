@@ -4,7 +4,7 @@ namespace playground {
 
 class Test {
 public:
-  void Print();
+  int number();
 };
 
 } // namespace playground
